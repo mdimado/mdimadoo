@@ -1,6 +1,6 @@
 ---
-title: 'My First Blog Post'
-date: '2024-01-17'
+title: 'Who? Why?'
+date: '2025-01-17'
 excerpt: 'This is my first blog post using Next.js and Markdown'
 ---
 
