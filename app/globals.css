@@ -70,3 +70,42 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+
+/* Global styles for headings */
+.heading-level-1 {
+  font-size: 1.5rem !important; /* h1 size */
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.heading-level-2 {
+  font-size: 2rem !important; /* h2 size */
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.heading-level-3 {
+  font-size: 1.75rem; /* h3 size */
+  font-weight: normal;
+  margin-bottom: 1rem;
+}
+
+.heading-level-4 {
+  font-size: 1.5rem; /* h4 size */
+  font-weight: normal;
+  margin-bottom: 1rem;
+}
+
+.heading-level-5 {
+  font-size: 1.25rem; /* h5 size */
+  font-weight: normal;
+  margin-bottom: 1rem;
+}
+
+.heading-level-6 {
+  font-size: 1rem !important; /* h6 size */
+  font-weight: normal;
+  margin-bottom: 1rem;
+}
+

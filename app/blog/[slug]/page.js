@@ -24,15 +24,17 @@ export default async function BlogPost({ params }) {
         ← Back to Home
       </Link>
       
-      <article className="prose lg:prose-xl mx-auto bg-white p-8 rounded-lg shadow">
-        <h1>{post.frontmatter.title}</h1>
-        <div className="text-gray-500 mb-8">
-          {formatDate(post.frontmatter.date)}
+      <article className="max-w-3xl mx-auto bg-white rounded-lg shadow-md overflow-hidden">
+        <div className="p-8">
+          <h1 className="text-4xl font-bold mb-4">{post.frontmatter.title}</h1>
+          <div className="text-gray-500 mb-8">
+            {formatDate(post.frontmatter.date)}
+          </div>
+          <div 
+            dangerouslySetInnerHTML={{ __html: post.content }}
+            className="prose prose-lg max-w-none prose-headings:font-bold prose-a:text-blue-600 prose-strong:font-bold prose-strong:text-gray-900 prose-blockquote:border-l-4 prose-blockquote:border-gray-300 prose-blockquote:pl-4 prose-blockquote:italic prose-li:marker:text-gray-400"
+          />
         </div>
-        <div 
-          dangerouslySetInnerHTML={{ __html: post.content }}
-          className="mt-8"
-        />
       </article>
     </div>
   )
