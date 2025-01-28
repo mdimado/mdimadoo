@@ -28,7 +28,7 @@ I've worked on countless FSD projects and helped a lot of people build theirs to
 <br/>
 Another interesting project I’ve started with one of my friends, <a href="https://github.com/muzaffarmhd">Muzaffar</a>, is *PipeOptimizer*. It’s an ML project aimed at optimizing CI/CD pipeline performance. Most of my blogs in the coming month will probably revolve around this project. A huge learning curve where I'll be learning both ML and CI/CD through this project.
 
-**<a href="https://upskillfam.co.in">UpskillFam</a>**, a community built by <a href="https://github.com/muzaffarmhd">Nihith</a> and <a href="https://github.com/muzaffarmhd">Ajith</a>, is another thing I’m a minor part of. I contributed by helping build and set up the platform (yet another FSD project 😭).
+**<a href="https://upskillfam.co.in">UpskillFam</a>**, a community built by <a href="https://github.com/nihithta">Nihith</a> and <a href="https://github.com/AjithSaiCh">Ajith</a>, is another thing I’m a minor part of. I contributed by helping build and set up the platform (yet another FSD project 😭).
 <br/>
 I’m also looking forward to being a contributor to an organization in GSoC 2025. I’ve been exploring organizations and projects, but the same questions keep coming up, *what stack? What technologies should I focus on? FSD?* Yeah, because that’s what I’m good at, but again, the competition in FSD projects will be massive.  
 
