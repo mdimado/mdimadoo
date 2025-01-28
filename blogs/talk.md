@@ -1,6 +1,6 @@
 ---
 title: 'Survival of the fittest?'
-date: '2025-01-24'
+date: '2025-01-28'
 excerpt: 'and a bit of github actions'
 ---
 
@@ -13,7 +13,6 @@ One thing I realized during this visit is that people only give you attention if
 This isn’t directed toward anyone else but myself. I need to improve in this area. I have to push myself to engage in conversations, express myself better. It’s something I know I need to work on.
 <br/>
 Now, here's what I planned for my second blog. Over the past week, I've been learning GitHub Actions, and this was for the <a href="https://github.com/muzaffarmhd/PipeOptimizer">pipeline optimizer</a> project that I mentioned in my first blog. From what I understood, the workflows created using GitHub Actions can be used to automate anything from integration to deployment to testing. I have created a <a href="https://github.com/mdimado/github-actions">GitHub repository</a> for learning GitHub Actions. These are the topics I've learned:
-Here’s your text with only grammar corrections and minimal changes:
 
 <br/>
 
