@@ -113,4 +113,9 @@ a{
   color: rgb(87, 87, 249);
 }
 
+h2{
+  font-size: large !important;
+  margin-top: 10px;
+  font-weight: 800;
+}
 

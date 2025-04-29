@@ -3,7 +3,7 @@ import { PostCard } from '@/components/PostList'
 import './globals.css'
 
 export default async function Home() {
-  const posts = await getAllPosts()
+  const posts = (await getAllPosts()).reverse()
 
   return (
     <div className="container mx-auto px-4 py-8">
