@@ -25,17 +25,17 @@ The program had ~275 applicants. They shortlisted ~55 for a hands-on task before
 The optional one was for bonus points. I did it anyway.
 
 My PC had Ubuntu 24.04, which the platform didn't support. Got hit with:
-
+<br/>
 <code>Unsupported Ubuntu release (24.04) detected. Exit.</code>
-
+<br/>
 Had to downgrade to Ubuntu 20.04, set everything up again, and get the platform running. Then deployed the kpm-basic-xapp (ran into a helm install error, fixed it with `dms_cli install`), and got the E2 simulator connected after debugging a kubectl connectivity issue where it was pointing to the wrong server IP.
 
 Submitted the <a href="https://github.com/mdimado/O-RAN-SC-Internship-Tasks">GitHub repo</a> with all three tasks documented and went to sleep.
 
 On 2nd September, this landed in my inbox:
-
+<br/>
 <i>"Hi Mohammed Imaduddin! Congratulations! We are pleased to let you know that you have been accepted as a mentee to the O-RAN-SC Code Quality Improvement mentorship."</i>
-
+<br/>
 Not gonna lie, did not see that one coming.
 <br/>
 <h2>What the actual work looked like</h2>
