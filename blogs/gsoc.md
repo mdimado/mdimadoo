@@ -44,5 +44,5 @@ Looking back, I started this whole GSoC journey not even knowing what fuzz testi
 If you told me in January, when I was writing my first blog wondering if full-stack was dead and whether I was even good enough, that I'd end up as a GSoC contributor at The Linux Foundation by the end of the year, I probably wouldn't have believed you.
 
 But here we are. 🤞🏼 (the fingers finally uncrossed)
-
+<br/>
 *P.S.: The code coverage numbers will only be measurable after a few more PRs get merged.*
