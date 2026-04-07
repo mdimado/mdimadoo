@@ -20,11 +20,12 @@ OpenPrinting is basically the backbone of printing on Linux. They maintain the p
 
 Those four projects were:
 
-- **<a href="https://github.com/OpenPrinting/goipp">goipp</a>** - a Go library that handles the Internet Printing Protocol
-- **<a href="https://github.com/OpenPrinting/ipp-usb">ipp-usb</a>** - a daemon that makes USB printers work as network IPP printers (yes, this is a thing)
-- **<a href="https://github.com/OpenPrinting/pyppd">pyppd</a>** - a Python utility for handling printer description files
-- **<a href="https://github.com/OpenPrinting/pycups">pycups</a>** - Python bindings for the CUPS API
-<br/>
+<ul>
+  <li><strong><a href="https://github.com/OpenPrinting/goipp">goipp</a></strong> - a Go library that handles the Internet Printing Protocol</li>
+  <li><strong><a href="https://github.com/OpenPrinting/ipp-usb">ipp-usb</a></strong> - a daemon that makes USB printers work as network IPP printers (yes, this is a thing)</li>
+  <li><strong><a href="https://github.com/OpenPrinting/pyppd">pyppd</a></strong> - a Python utility for handling printer description files</li>
+  <li><strong><a href="https://github.com/OpenPrinting/pycups">pycups</a></strong> - Python bindings for the CUPS API</li>
+</ul>
 
 ***Why was this actually hard?***
 
