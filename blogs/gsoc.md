@@ -24,6 +24,7 @@ Those four projects were:
 - **<a href="https://github.com/OpenPrinting/pyppd">pyppd</a>** - a Python utility for handling printer description files
 - **<a href="https://github.com/OpenPrinting/pycups">pycups</a>** - Python bindings for the CUPS API
 <br/>
+
 ***Why was this actually hard?***
 
 Each of these four projects is written in a different language, has a different build system, and needs a different fuzzing engine. That alone was a lot to wrap my head around. But the part that made it genuinely interesting was ipp-usb. It's a daemon that talks to physical USB printers, which you obviously can't plug into a fuzzing server. So, to fuzz the hardware-dependent parts of the code, I had to help build a virtual IPP-over-USB emulator using USB/IP. Basically, faking a printer in software so the fuzzer could pretend it was plugging things into one. That was probably the most fun I had during the entire project, not gonna lie.
