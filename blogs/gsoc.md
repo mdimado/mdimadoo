@@ -1,6 +1,6 @@
 ---
 title: 'It happened.'
-date: '2025-05-08'
+date: '2025-09-08'
 excerpt: 'fingers finally uncrossed'
 ---
 
