@@ -19,6 +19,7 @@ Yeah, I know, that sounds like a mouthful. Let me break it down in a way that ac
 OpenPrinting is basically the backbone of printing on Linux. They maintain the printer/driver database, CUPS (the thing that lets your Linux machine talk to printers), and a bunch of other critical tools. Now, <a href="https://github.com/google/oss-fuzz">OSS-Fuzz</a> is a Google project that continuously throws random, malformed, and edge-case inputs at software to find bugs and crashes before they turn into actual security problems. The whole point of my project was to take four OpenPrinting projects that had *never* been fuzz-tested before and get them working with OSS-Fuzz.
 
 Those four projects were:
+
 - **<a href="https://github.com/OpenPrinting/goipp">goipp</a>** - a Go library that handles the Internet Printing Protocol
 - **<a href="https://github.com/OpenPrinting/ipp-usb">ipp-usb</a>** - a daemon that makes USB printers work as network IPP printers (yes, this is a thing)
 - **<a href="https://github.com/OpenPrinting/pyppd">pyppd</a>** - a Python utility for handling printer description files
