@@ -26,9 +26,7 @@ The optional one was for bonus points. I did it anyway.
 
 My PC had Ubuntu 24.04, which the platform didn't support. Got hit with:
 
-```
-Unsupported Ubuntu release (24.04) detected. Exit.
-```
+<code>Unsupported Ubuntu release (24.04) detected. Exit.</code>
 
 Had to downgrade to Ubuntu 20.04, set everything up again, and get the platform running. Then deployed the kpm-basic-xapp (ran into a helm install error, fixed it with `dms_cli install`), and got the E2 simulator connected after debugging a kubectl connectivity issue where it was pointing to the wrong server IP.
 
@@ -36,7 +34,7 @@ Submitted the <a href="https://github.com/mdimado/O-RAN-SC-Internship-Tasks">Git
 
 On 2nd September, this landed in my inbox:
 
-> *Hi Mohammed Imaduddin! Congratulations! We are pleased to let you know that you have been accepted as a mentee to the O-RAN-SC Code Quality Improvement mentorship.*
+<i>"Hi Mohammed Imaduddin! Congratulations! We are pleased to let you know that you have been accepted as a mentee to the O-RAN-SC Code Quality Improvement mentorship."</i>
 
 Not gonna lie, did not see that one coming.
 <br/>

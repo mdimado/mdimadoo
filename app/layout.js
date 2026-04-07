@@ -38,7 +38,7 @@ export default function RootLayout({ children }) {
         <div className="bg-gray-50 mt-8">
           <div className="container mx-auto px-4 py-8">
             <div className="text-center text-gray-600">
-              © 2025 mdimado. All rights reserved.
+              © 2026 mdimado. All rights reserved.
             </div>
           </div>
         </div>
