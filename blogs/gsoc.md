@@ -19,14 +19,14 @@ Yeah, I know, that sounds like a mouthful. Let me break it down in a way that ac
 OpenPrinting is basically the backbone of printing on Linux. They maintain the printer/driver database, CUPS (the thing that lets your Linux machine talk to printers), and a bunch of other critical tools. Now, <a href="https://github.com/google/oss-fuzz">OSS-Fuzz</a> is a Google project that continuously throws random, malformed, and edge-case inputs at software to find bugs and crashes before they turn into actual security problems. The whole point of my project was to take four OpenPrinting projects that had *never* been fuzz-tested before and get them working with OSS-Fuzz.
 
 Those four projects were:
-
+<br/>
 <ul>
   <li><strong><a href="https://github.com/OpenPrinting/goipp">goipp</a></strong> - a Go library that handles the Internet Printing Protocol</li>
   <li><strong><a href="https://github.com/OpenPrinting/ipp-usb">ipp-usb</a></strong> - a daemon that makes USB printers work as network IPP printers (yes, this is a thing)</li>
   <li><strong><a href="https://github.com/OpenPrinting/pyppd">pyppd</a></strong> - a Python utility for handling printer description files</li>
   <li><strong><a href="https://github.com/OpenPrinting/pycups">pycups</a></strong> - Python bindings for the CUPS API</li>
 </ul>
-
+<br/>
 ***Why was this actually hard?***
 
 Each of these four projects is written in a different language, has a different build system, and needs a different fuzzing engine. That alone was a lot to wrap my head around. But the part that made it genuinely interesting was ipp-usb. It's a daemon that talks to physical USB printers, which you obviously can't plug into a fuzzing server. So, to fuzz the hardware-dependent parts of the code, I had to help build a virtual IPP-over-USB emulator using USB/IP. Basically, faking a printer in software so the fuzzer could pretend it was plugging things into one. That was probably the most fun I had during the entire project, not gonna lie.
