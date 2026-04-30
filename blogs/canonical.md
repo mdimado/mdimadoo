@@ -30,6 +30,14 @@ They are also very upfront about one thing. If they detect AI in your answers, y
 
 January 2026, sixth application. This time I got through every stage. Let me break it all down.
 <br/>
+<h2>The application itself</h2>
+
+The Canonical application is not just a resume upload. Along with the CV, they ask you a few questions about yourself and your experience right at the application stage. These are reviewed by a hiring lead who is not a recruiter but an actual engineer or manager from within the company. They decide whether to move you forward or suggest a different role entirely.
+
+What I found interesting is that they are transparent about this from the very first email. The hiring lead introduces themselves, explains what they do at Canonical, and tells you they are there to help you find the right role, not just fill a position. Diogo, my hiring lead for the Ubuntu Security Engineer role, is an Engineering Manager in the security team. Every email from him had "Per aspera ad astra" in the signature which I thought was a nice touch. 😭
+
+One thing worth knowing is that Canonical has a rule where they can consider your application for the same role once every six months, or across four separate roles in a six month period. So if you get rejected early, you cannot just reapply immediately. That is partly why my first few applications hurt more than they would have otherwise.
+<br/>
 <h2>The written interview</h2>
 
 The questions cover a lot of ground. Some of the ones I found most interesting to answer were about open source, Linux knowledge, and why Canonical specifically.
