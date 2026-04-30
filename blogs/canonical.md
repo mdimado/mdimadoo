@@ -6,23 +6,23 @@ excerpt: 'written interviews, psychometric tests, and a very long process'
 
 So I've been applying to Canonical. A lot. And I think it deserves its own blog because the process is genuinely unlike anything else I've gone through.
 
-For context, <a href="https://canonical.com">Canonical</a> is the company behind Ubuntu. If you've used Linux, you've probably used something they built. They're fully remote, distributed across every timezone, and they take hiring very seriously. Like, uncomfortably seriously. 😭
+For context, <a href="https://canonical.com">Canonical</a> is the company behind Ubuntu. If you've used Linux, you've probably used something they built. They're fully remote, distributed across every timezone, and they take hiring very seriously. Like, uncomfortably seriously. 
 <br/>
 <h2>How it started</h2>
 
 My first application was in June 2025, for the Community Engineer role. Got moved forward, received the written interview, and then my semester exams happened. I didn't submit in time. They closed the application. That was entirely on me.
 
-Applied again in November 2025, this time for Distributed Systems Testing Software Engineer (Python/Go). Same thing. Written interview sent, I submitted it late because of exams again 😭, they closed it, I emailed Thorsten explaining the situation, he reopened it. I submitted. Got rejected a week later.
+Applied again in November 2025, this time for Distributed Systems Testing Software Engineer (Python/Go). Same thing. Written interview sent, I submitted it late because of exams again , they closed it, I emailed Thorsten explaining the situation, he reopened it. I submitted. Got rejected a week later.
 
 Meanwhile I also applied to Embedded Linux Consultant, Japan. Rejected within 3 days. That one I probably should not have applied to.
 
-Then Security Software Engineer. Rejected on resume screening. Graduate Software Engineer. Also rejected on resume screening. At this point the Canonical folder in my Gmail was getting embarrassing. 😭
+Then Security Software Engineer. Rejected on resume screening. Graduate Software Engineer. Also rejected on resume screening. At this point the Canonical folder in my Gmail was getting embarrassing. 
 <br/>
 <h2>What the process looks like</h2>
 
 Every Canonical application goes through roughly the same stages. Resume screening, then a written interview and psychometric assessment, then a take-home technical assessment, then technical interviews, then a talent interview, then hiring manager and VP interviews, and then an offer.
 
-The written interview is what makes Canonical different from everyone else. It is a long document with questions across four broad areas. Engineering experience, education (yes, they ask about your high school grades 😭), context (how you see Canonical and its mission), and role specific questions. You submit it as an anonymous PDF and multiple reviewers grade it independently to reduce bias.
+The written interview is what makes Canonical different from everyone else. It is a long document with questions across four broad areas. Engineering experience, education (yes, they ask about your high school grades ), context (how you see Canonical and its mission), and role specific questions. You submit it as an anonymous PDF and multiple reviewers grade it independently to reduce bias.
 
 They are also very upfront about one thing. If they detect AI in your answers, your application is over. Not just for this role but for any role at Canonical. They mean it.
 <br/>
@@ -34,7 +34,7 @@ January 2026, sixth application. This time I got through every stage. Let me bre
 
 The Canonical application is not just a resume upload. Along with the CV, they ask you a few questions about yourself and your experience right at the application stage. These are reviewed by a hiring lead who is not a recruiter but an actual engineer or manager from within the company. They decide whether to move you forward or suggest a different role entirely.
 
-What I found interesting is that they are transparent about this from the very first email. The hiring lead introduces themselves, explains what they do at Canonical, and tells you they are there to help you find the right role, not just fill a position. Diogo, my hiring lead for the Ubuntu Security Engineer role, is an Engineering Manager in the security team. Every email from him had "Per aspera ad astra" in the signature which I thought was a nice touch. 😭
+What I found interesting is that they are transparent about this from the very first email. The hiring lead introduces themselves, explains what they do at Canonical, and tells you they are there to help you find the right role, not just fill a position. Diogo, my hiring lead for the Ubuntu Security Engineer role, is an Engineering Manager in the security team. Every email from him had "Per aspera ad astra" in the signature which I thought was a nice touch. 
 
 One thing worth knowing is that Canonical has a rule where they can consider your application for the same role once every six months, or across four separate roles in a six month period. So if you get rejected early, you cannot just reapply immediately. That is partly why my first few applications hurt more than they would have otherwise.
 <br/>
@@ -62,7 +62,7 @@ The word meaning one is the vocabulary speed section, rapid synonym grouping und
 <br/>
 <h2>The take-home technical assessment</h2>
 
-This was a 3 part assessment. Vulnerability research, design review, and a code audit. They said it should take about 3 hours. I spent more than that. 😭
+This was a 3 part assessment. Vulnerability research, design review, and a code audit. They said it should take about 3 hours. I spent more than that. 
 
 ***Vulnerability Research***
 
@@ -80,7 +80,7 @@ The main risks I identified were the confused deputy problem where the service p
 
 This was the most involved part. I was given a C program and had to find the bugs, define the threat model, write test cases, and rewrite the code to fix everything.
 
-The bugs in the original code were actually a lot. gets() into a 32 byte buffer which causes stack overflow on long input. malloc(strlen(input)) without the +1 for the null terminator which causes heap overflow on every strcpy. printf(prompt) passing user input directly as the format string which is a classic format string vulnerability. system() being called with a command built from user input which allows command injection. The filename being built directly from user input which allows path traversal. malloc and asprintf calls with no corresponding free which causes memory leaks. And #pragma GCC diagnostic ignored at the top which was literally suppressing all the compiler warnings about all of the above. 😭
+The bugs in the original code were actually a lot. gets() into a 32 byte buffer which causes stack overflow on long input. malloc(strlen(input)) without the +1 for the null terminator which causes heap overflow on every strcpy. printf(prompt) passing user input directly as the format string which is a classic format string vulnerability. system() being called with a command built from user input which allows command injection. The filename being built directly from user input which allows path traversal. malloc and asprintf calls with no corresponding free which causes memory leaks. And #pragma GCC diagnostic ignored at the top which was literally suppressing all the compiler warnings about all of the above.
 
 The threat model question was interesting. As a local tool the risks are manageable, mostly crashes and bad patterns. But if the same code were internet exposed, a remote attacker could chain the buffer overflow for remote code execution, the format string bug for memory disclosure, the system() call for remote shell execution, and the path traversal for arbitrary file writes. It goes from low impact to full remote compromise.
 
@@ -136,13 +136,13 @@ He asked about AI in security. I said I use LLMs like Claude Code and Cursor to 
 
 He asked why Canonical specifically. I talked about Till Kamppeter and how a workshop with him genuinely gave me an appreciation for how Canonical thinks about system design, the depth behind things like Snap that you do not see from the outside. And my open source background made it feel like a natural fit.
 
-At the end he explained the scorecard process. He fills it out after the call covering communication, language, and handling of challenging questions. It goes to Diogo who consolidates everything and moves to an offer discussion if everything checks out. He said I had done well to reach the 5th round. That felt good to hear. 😭
+At the end he explained the scorecard process. He fills it out after the call covering communication, language, and handling of challenging questions. It goes to Diogo who consolidates everything and moves to an offer discussion if everything checks out. He said I had done well to reach the 5th round. That felt good to hear. 
 <br/>
 <h2>Where things stand</h2>
 
 Next up are interviews with Diogo himself and then Pierre Guillemin, the VP of Excellence Engineering. Diogo mentioned there is an in-person sprint happening first so everything is paused until May 19th.
 
-So I am waiting. Again. As always. 😭
+So I am waiting. Again. As always. 
 
 If this works out, it will be the longest and most thorough hiring process I have ever been through. Six applications, ten months, five interviews passed, two more to go.
 
