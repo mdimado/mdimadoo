@@ -25,16 +25,58 @@ Every Canonical application goes through roughly the same stages. Resume screeni
 The written interview is what makes Canonical different from everyone else. It is a long document with questions across four broad areas. Engineering experience, education (yes, they ask about your high school grades 😭), context (how you see Canonical and its mission), and role specific questions. You submit it as an anonymous PDF and multiple reviewers grade it independently to reduce bias.
 
 They are also very upfront about one thing. If they detect AI in your answers, your application is over. Not just for this role but for any role at Canonical. They mean it.
-
-The GIA is a psychometric assessment from Thomas International that measures reasoning, perceptual speed, number speed and accuracy, word meaning, and spatial visualization. It takes about 40 to 45 minutes and speed matters as much as accuracy.
 <br/>
 <h2>Ubuntu Security Engineer</h2>
 
-January 2026, sixth application. This time I submitted the written interview on time. Then the GIA. Then a take-home technical assessment which was a C code review focused on security vulnerabilities. Then three early stage interviews in one week, all of which I passed. Then a Talent interview. Then a Hiring Manager interview with Ivan Reedman. And now I am waiting for the final stage which is interviews with Diogo (my hiring lead) and Pierre Guillemin, the VP of Excellence Engineering.
+January 2026, sixth application. This time I got through every stage. Let me break it all down.
+<br/>
+<h2>The written interview</h2>
 
-That is 5 interviews down and 2 more to go. At the time of writing this. 😭
+The questions cover a lot of ground. Some of the ones I found most interesting to answer were about open source, Linux knowledge, and why Canonical specifically.
 
-Let me actually break down what happened in each one because I think it is worth documenting.
+On open source, I wrote about how it started for me through the college club, how I learned that the basics matter more than anything else, clear docs, consistent contribution guidelines, maintainers who actually review things. That experience led me to GSoC and then the LFX mentorship.
+
+On Linux knowledge, I was honest. I wouldn't call myself a kernel level engineer but I understand how the system behaves from user space down to the internals. Working with OpenPrinting introduced me to a different layer of the stack entirely, USB communication, CUPS internals, how packaging affects something as simple as printing.
+
+On why Canonical, I talked about Till Kamppeter. His talk at OOSC 3.0 about Snap, Ubuntu Core, and the immutable desktop genuinely changed how I think about operating system design. It showed me how much engineering goes into making something feel simple.
+
+The education section was the most unexpected part. They asked about high school grades, which subjects I was strongest in, university choices I considered, and what I achieved that was exceptional. I wrote about being the Green House captain and class prefect in school, winning elocution three times, and then GSoC and LFX and the VP role at college. It felt odd to be writing about school in a job application but I understood why they ask. They want to see consistency across your whole life, not just recent projects.
+<br/>
+<h2>The GIA</h2>
+
+The GIA is a psychometric assessment from Thomas International. It has five sections. Reasoning, perceptual speed, number speed and accuracy, word meaning, and spatial visualization. The whole thing takes about 40 to 45 minutes and speed matters as much as accuracy. You do not have time to think deeply. It is pattern recognition.
+
+My results:
+
+Reasoning — above majority. Perceptual speed — above majority. Number speed and accuracy — above majority. Spatial visualization — above majority. Word meaning — below majority.
+
+The word meaning one is the vocabulary speed section, rapid synonym grouping under time pressure. It is also the one most affected by not being a native English speaker, which Canonical actually acknowledges and accounts for. The other four are the ones that matter most for engineering roles and I was above majority in all of them. So I was not too worried about the word meaning result.
+<br/>
+<h2>The take-home technical assessment</h2>
+
+This was a 3 part assessment. Vulnerability research, design review, and a code audit. They said it should take about 3 hours. I spent more than that. 😭
+
+***Vulnerability Research***
+
+I was given CVE-2016-0741, a bug in 389 Directory Server where an abnormally closed connection could cause an infinite loop in the worker threads. I had to figure out what software it affects, find the fix commits, determine whether any Ubuntu releases were affected, and describe how I would address and verify a fix.
+
+The interesting part was figuring out whether Ubuntu was actually affected. I used rmadison to check the versions of 389-ds-base shipped across Ubuntu releases and cross-checked against Launchpad. Trusty shipped 1.3.2.16 and Xenial shipped 1.3.4.9. The vulnerable range was versions 1.3.4.0 to 1.3.4.7. Xenial shipped above the fixed version. So no Ubuntu release was actually affected. The correct action was to mark it as not affected in the CVE tracker.
+
+***Design Review***
+
+I was given an architecture diagram of an untrusted sandbox client communicating over local IPC with a trusted service. The service exposed three endpoints, a privileged one, an unprivileged one, and a user interaction one.
+
+The main risks I identified were the confused deputy problem where the service performs privileged operations without validating whether the specific caller is authorized for that exact action, and user prompt manipulation where an attacker with control over the client could manipulate the prompt text shown to the user since the prompt was built from client controlled strings. I also flagged the lack of caller authentication on the IPC endpoint.
+
+***Code Audit***
+
+This was the most involved part. I was given a C program and had to find the bugs, define the threat model, write test cases, and rewrite the code to fix everything.
+
+The bugs in the original code were actually a lot. gets() into a 32 byte buffer which causes stack overflow on long input. malloc(strlen(input)) without the +1 for the null terminator which causes heap overflow on every strcpy. printf(prompt) passing user input directly as the format string which is a classic format string vulnerability. system() being called with a command built from user input which allows command injection. The filename being built directly from user input which allows path traversal. malloc and asprintf calls with no corresponding free which causes memory leaks. And #pragma GCC diagnostic ignored at the top which was literally suppressing all the compiler warnings about all of the above. 😭
+
+The threat model question was interesting. As a local tool the risks are manageable, mostly crashes and bad patterns. But if the same code were internet exposed, a remote attacker could chain the buffer overflow for remote code execution, the format string bug for memory disclosure, the system() call for remote shell execution, and the path traversal for arbitrary file writes. It goes from low impact to full remote compromise.
+
+For the rewrite I replaced gets() with fgets(), fixed the malloc off by one, switched printf(prompt) to printf("%s", prompt), replaced system() with direct fopen() and fprintf() to eliminate the shell invocation entirely, added input sanitization to allow only safe characters before constructing the file path, and freed all allocated memory.
 <br/>
 <h2>The interviews</h2>
 
@@ -42,7 +84,7 @@ Let me actually break down what happened in each one because I think it is worth
 
 Started with the usual tell me about yourself, walked through my GSoC and O-RAN work. Then it got technical pretty fast. He asked about Rust. I was honest that I had never used it and said I knew it was designed for speed. He pointed out that memory safety is actually the main value proposition. Fair point, noted.
 
-He asked about package management, .deb files, and snaps. I had learned about snaps through Till Kamppeter who spent 20 plus years at Canonical, so I could speak to what they are conceptually. No hands on experience building them though.
+He asked about package management, .deb files, and snaps. I had learned about snaps through Till Kamppeter so I could speak to what they are conceptually. No hands on experience building them though.
 
 He asked me to explain fuzzing to a 10 year old. I used a Hot Wheels car analogy. Keep pushing the car back and forth until one of the tires flattens, which tells you there was a defect. Fuzzing is continuously testing something until it breaks. I think that landed okay.
 
@@ -90,7 +132,7 @@ At the end he explained the scorecard process. He fills it out after the call co
 <br/>
 <h2>Where things stand</h2>
 
-Next up are interviews with Diogo himself and then Pierre Guillemin. Diogo mentioned there is an in-person sprint happening first so everything is paused until May 19th.
+Next up are interviews with Diogo himself and then Pierre Guillemin, the VP of Excellence Engineering. Diogo mentioned there is an in-person sprint happening first so everything is paused until May 19th.
 
 So I am waiting. Again. As always. 😭
 
