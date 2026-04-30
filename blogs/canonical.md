@@ -48,7 +48,7 @@ On Linux knowledge, I was honest. I wouldn't call myself a kernel level engineer
 
 On why Canonical, I talked about Till Kamppeter. His talk at OOSC 3.0 about Snap, Ubuntu Core, and the immutable desktop genuinely changed how I think about operating system design. It showed me how much engineering goes into making something feel simple.
 
-The education section was the most unexpected part. They asked about high school grades, which subjects I was strongest in, university choices I considered, and what I achieved that was exceptional. I wrote about being the Green House captain and class prefect in school, winning elocution three times, and then GSoC and LFX and the VP role at college. It felt odd to be writing about school in a job application but I understood why they ask. They want to see consistency across your whole life, not just recent projects.
+The education section was the most unexpected part. They asked about high school grades, which subjects I was strongest in, university choices I considered, and what I achieved that was exceptional. I wrote about being the class prefect in school, winning elocution three times, and then GSoC and LFX and the VP role at college. It felt odd to be writing about school in a job application but I understood why they ask. They want to see consistency across your whole life, not just recent projects.
 <br/>
 <h2>The GIA</h2>
 
